@@ -22,11 +22,21 @@ public class SceneScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.Return) && prefab && !newObj)
+        {
             restoreNewInstance();
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void restoreNewInstance()
     {
         newObj = Instantiate(prefab, sphereMovementScript.getStartPos(), Quaternion.identity);
+        int oldPoints = sphereMovementScript.getPoints();
+        sphereMovementScript = FindObjectOfType(typeof(SphereMovement)) as SphereMovement;
+        sphereMovementScript.setPoints(oldPoints);
     }
 }

@@ -24,6 +24,11 @@ public class WallDown : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        sphereMovementScript = FindObjectOfType(typeof(SphereMovement)) as SphereMovement;
+    }
+
     void moveDown()
     {
         transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime, Space.World);

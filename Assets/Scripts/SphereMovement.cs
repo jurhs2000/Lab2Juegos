@@ -8,7 +8,7 @@ public class SphereMovement : MonoBehaviour
     private float velocity = 10;
     private Vector3 startPos;
     private int force = 10;
-    private int jumpForce = 5;
+    private int jumpForce = 6;
     private bool isFalling;
     private Rigidbody rb;
     public GameObject prefab;
@@ -85,6 +85,11 @@ public class SphereMovement : MonoBehaviour
     public int getPoints()
     {
         return points;
+    }
+
+    public void setPoints(int newPoints)
+    {
+        points = newPoints;
     }
 
     public bool getIsProtected()

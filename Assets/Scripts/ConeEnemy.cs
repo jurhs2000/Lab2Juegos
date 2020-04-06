@@ -18,6 +18,11 @@ public class ConeEnemy : MonoBehaviour
     {
     }
 
+    private void FixedUpdate()
+    {
+        sphereMovementScript = FindObjectOfType(typeof(SphereMovement)) as SphereMovement;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && !sphereMovementScript.getIsProtected())
